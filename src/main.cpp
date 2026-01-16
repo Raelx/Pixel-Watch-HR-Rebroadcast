@@ -7,7 +7,7 @@ static BLEUUID serviceUUID("180D");
 static BLEUUID charUUID("2A37");
 // Address of the Pixel Watch (from your log)
 // Set to "" to connect to ANY Heart Rate Monitor (first found)
-static std::string targetDeviceAddress = "20:F0:94:4C:01:D5"; 
+static std::string targetDeviceAddress = ""; 
 
 // --- Global Variables ---
 // Client (Connecting to Watch)
