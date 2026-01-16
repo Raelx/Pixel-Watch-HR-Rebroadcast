@@ -6,7 +6,8 @@
 static BLEUUID serviceUUID("180D");
 static BLEUUID charUUID("2A37");
 // Address of the Pixel Watch (from your log)
-static BLEAddress targetDeviceAddress("20:F0:94:4C:01:D5");
+// Set to "" to connect to ANY Heart Rate Monitor (first found)
+static std::string targetDeviceAddress = ""; 
 
 // --- Global Variables ---
 // Client (Connecting to Watch)
@@ -131,14 +132,16 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
     bool found = false;
     
-    // Check by Service UUID
+    // Check by Service UUID (Connect to ANY device with HR Service if we haven't defined a specific address or if we just want to grab the first one)
     if (advertisedDevice->haveServiceUUID() && advertisedDevice->isAdvertisingService(serviceUUID)) {
-       // found = true; // Use address only to be safe? The watch does advertise the UUID though.
+       found = true; 
     }
-    // Check by Address
-    if (advertisedDevice->getAddress().equals(targetDeviceAddress)) {
-        found = true;
-        Serial.println("Found Pixel Watch by Address!");
+    // Check by Address (only if configured)
+    if (targetDeviceAddress.length() > 0) {
+        if (advertisedDevice->getAddress().equals(BLEAddress(targetDeviceAddress))) {
+            found = true;
+            Serial.println("Found Pixel Watch by Address!");
+        }
     }
 
     if (found) {

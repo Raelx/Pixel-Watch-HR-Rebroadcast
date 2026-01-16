@@ -1,6 +1,6 @@
 # Pixel Watch HR Rebroadcast
 
-**Bridge your Pixel Watch 3 heart rate data to bike computers, gym equipment, and apps that don't support the Watch directly.**
+**Bridge your Pixel Watch 2, 3 or 4 heart rate data to bike computers, gym equipment, and apps that don't support the Watch directly.**
 
 This project turns an **ESP32-C3** into a Bluetooth Low Energy (BLE) bridge. It connects to your Pixel Watch 3 (which encrypts its HR data) and re-broadcasts it as a standard, open Heart Rate Monitor (HRM) sensor.
 
@@ -27,10 +27,9 @@ This project turns an **ESP32-C3** into a Bluetooth Low Energy (BLE) bridge. It 
     cd Pixel-Watch-HR-Rebroadcast
     ```
 
-2.  **Configure Target Address**
-    *   Open `src/main.cpp`
-    *   Update the `targetDeviceAddress` variable with your Pixel Watch's Bluetooth MAC address.
-    *   *Tip: You can find this in the watch settings or by using a BLE scanner app like nRF Connect.*
+2.  **Configure Target Address (Optional)**
+    *   **By default**, the device scans for **ANY** device advertising a Heart Rate Service. It will pair with the first one it finds (usually your watch if you are in pairing mode). No code changes needed!
+    *   **Optional**: If you use this in a crowded gym, you can open `src/main.cpp` and set `targetDeviceAddress` to your specific Watch MAC address to prevent accidental pairing with others.
 
 3.  **Build & Upload**
     *   This project uses [PlatformIO](https://platformio.org/).
@@ -42,7 +41,7 @@ This project turns an **ESP32-C3** into a Bluetooth Low Energy (BLE) bridge. It 
 
 ### 1. Connect Pixel Watch to ESP32
 According to [Google's official instructions](https://support.google.com/fitbit/answer/14236705?hl=en#zippy=%2Cconnect-pixel-watch-or-to-my-fitness-equipment-or-app):
-1.  On your Pixel Watch 3, swipe down from the clock face to access **Quick Settings**.
+1.  On your Pixel Watch, swipe down from the clock face to access **Quick Settings**.
 2.  Tap the **Connected Fitness** icon (looks like a heart with broadcast waves).
 3.  Tap **Connect**.
 4.  Power on the ESP32-C3. It will automatically scan and initiate a connection.
