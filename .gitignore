@@ -5,4 +5,5 @@
 .git/
 venv
 *.bin
+!web_installer/*.bin
 *.elf
