@@ -4,7 +4,7 @@
 
 This project turns an **ESP32-C3** into a Bluetooth Low Energy (BLE) bridge. It connects to your Pixel Watch 3 (which encrypts its HR data) and re-broadcasts it as a standard, open Heart Rate Monitor (HRM) sensor.
 
-![Pixel Watch HR Rebroadcast](docs\Watch broadcast to Edge 530.png)
+![Pixel Watch HR Rebroadcast](docs/Watch broadcast to Edge 530.png)
 
 ## 🚀 Features
 
