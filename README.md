@@ -23,7 +23,7 @@ This project turns an **ESP32-C3** into a Bluetooth Low Energy (BLE) bridge. It 
 The easiest way to install is using the **Web Installer**. No coding required!
 
 1.  Connect your ESP32-C3 to your computer via USB.
-2.  Open [this installer page](https://yourusername.github.io/Pixel-Watch-HR-Rebroadcast/web_installer/) in Chrome or Edge.
+2.  Open [this installer page](https://Raelx.github.io/Pixel-Watch-HR-Rebroadcast/web_installer/) in Chrome or Edge.
     *   *Note: You need to enable GitHub Pages for this repository for the link to work.*
 3.  Click **Connect & Install**.
 
