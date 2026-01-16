@@ -1,0 +1,8 @@
+.pio
+.vscode/.browserslistrc
+.DS_Store
+.svn
+.git/
+venv
+*.bin
+*.elf
